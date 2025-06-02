@@ -46,36 +46,3 @@ variable "public_subnet_cidrs" {
   default     = ["10.10.10.0/24", "10.10.11.0/24", "10.10.12.0/24"]
 }
 
-
-variable "bastion_ec2_keypair_name" {
-  type        = string
-  description = "Existing SSH key pair to use for bastion EC2 instance."
-  default     = null
-}
-
-variable "bastion_cidr_allow_ingress_ssh" {
-  type        = list(string)
-  description = "List of source CIDR ranges to allow inbound to bastion on port 22 (SSH)."
-  default     = []
-}
-
-#------------------------------------------------------------------------------
-# EC2 SSH Key Pairs
-#------------------------------------------------------------------------------
-variable "create_ec2_ssh_keypair" {
-  type        = bool
-  description = "Boolean to create EC2 SSH key pair. This is separate from the `bastion_keypair` input variable."
-  default     = false
-}
-
-variable "ec2_ssh_keypair_name" {
-  type        = string
-  description = "Name of EC2 SSH key pair."
-  default     = "ec2-keypair"
-}
-
-variable "ec2_ssh_public_key" {
-  type        = string
-  description = "Public key material for EC2 SSH Key Pair."
-  default     = null
-}
