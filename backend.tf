@@ -5,7 +5,7 @@ terraform {
     organization = "hc-global"
 
     workspaces {
-      project = "hc-global"
+      
       name = "tf-lab03-vcs-ws"
       
     }
